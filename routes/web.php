@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RoverController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [RoverController::class, 'index']);
+Route::post('/move', [RoverController::class, 'move']);
