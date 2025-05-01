@@ -74,6 +74,8 @@
             <div class="d-flex align-items-center pt-3 mb-3">
                 <div class="bg-dark text-white p-3 rounded me-3"></div>
                 <p class="mb-0">= Obstacle</p>
+                <div class="bg-primary-subtle border border-black p-3 rounded ms-5"></div>
+                <p class="mb-0 ms-3">One square = 20</p>
             </div>
             <div class="d-flex align-items-center mb-3 pb-5">
                 <div class="bg-primary text-white p-3 rounded me-3"></div>
