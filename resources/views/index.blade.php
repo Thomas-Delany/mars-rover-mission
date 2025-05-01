@@ -16,25 +16,35 @@
         <div class="row d-flex justify-content-center">
             <!-- Column 1: The Grid -->
             <div class="col-md-4 pb-5 position-relative">
-                <div id="grid">
-                    @for ($y = 9; $y >= 0; $y--)
-                    <div class="row g-0">
-                        @for ($x = 0; $x < 10; $x++)
-                            @php
-                            $isObstacle=($x===3 && $y===4) ||
-                            ($x===7 && $y===8) ||
-                            ($x===1 && $y===7);
-                            $isRover=($x===2 && $y===2);
-                            @endphp
-                            <div class="col p-0 border cell ratio ratio-1x1 {{ $isObstacle ? 'bg-dark' : '' }} {{ $isRover ? 'bg-primary' : '' }}"
-                            data-x="{{ $x }}" data-y="{{ $y }}">
-                            {{-- Optional: show coordinates --}}
-                            {{-- {{ $x }},{{ $y }} --}}
+                {{-- North --}}
+                <div class="text-uppercase text-center fw-bold mb-2">N</div>
+                <div>
+                    {{-- West --}}
+                    <div class="text-uppercase fw-bold me-2">W</div>
+                    <div id="grid">
+                        @for ($y = 9; $y >= 0; $y--)
+                        <div class="row g-0">
+                            @for ($x = 0; $x < 10; $x++)
+                                @php
+                                $isObstacle=($x===3 && $y===4) ||
+                                ($x===7 && $y===8) ||
+                                ($x===1 && $y===7);
+                                $isRover=($x===2 && $y===2);
+                                @endphp
+                                <div class="col p-0 border cell ratio ratio-1x1 {{ $isObstacle ? 'bg-dark' : '' }} {{ $isRover ? 'bg-primary' : '' }}"
+                                data-x="{{ $x }}" data-y="{{ $y }}">
+                                {{-- Optional: show coordinates --}}
+                                {{-- {{ $x }},{{ $y }} --}}
+                        </div>
+                        @endfor
                     </div>
                     @endfor
                 </div>
-                @endfor
+                {{-- East --}}
+                <div class="text-uppercase fw-bold ms-2">E</div>
             </div>
+            {{-- South --}}
+            <div class="text-uppercase text-center fw-bold mt-2">S</div>
         </div>
 
         <div class="col-md-4">
