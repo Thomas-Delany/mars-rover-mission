@@ -36,11 +36,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document
         .getElementById("forwardBtn")
-        .addEventListener("click", () => move(0, 1)); // move up (increase y)
+        .addEventListener("click", () => move(0, 1));
     document
         .getElementById("leftBtn")
-        .addEventListener("click", () => move(-1, 0)); // move left (decrease x)
+        .addEventListener("click", () => move(-1, 0));
     document
         .getElementById("rightBtn")
-        .addEventListener("click", () => move(1, 0)); // move right (increase x)
+        .addEventListener("click", () => move(1, 0));
 });

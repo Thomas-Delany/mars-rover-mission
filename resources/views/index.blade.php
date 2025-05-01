@@ -7,11 +7,14 @@
     <title>Mars Rover Mission</title>
     <!-- Bootstrap CDN for styling -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="icon" href="{{ asset('icons8-mars-58.png') }}" type="favicon">
+
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="container bg-warning">
-    <h1 class="p-5 text-center fw-bold">Mars Rover Mission</h1>
+<body class="container bg-primary-subtle">
+    <h1 class="p-5 text-center fw-bold text-dark">Mars Rover Mission</h1>
     <div class="container mt-5">
 
         <div class="row d-flex justify-content-center">
@@ -19,13 +22,13 @@
             <!-- Column 1: The Grid -->
             <div class="col-md-4 pb-5 text-center">
                 <!-- North -->
-                <div class="text-uppercase fw-bold mb-2">N</div>
+                <div id="label-north" class="text-uppercase fw-bold mb-2">N</div>
 
                 <!-- Row containing West + Grid + East -->
                 <div class="row">
                     <!-- West -->
                     <div class="col-auto d-flex align-items-center justify-content-center">
-                        <div class="text-uppercase fw-bold">W</div>
+                        <div id="label-west" class="text-uppercase fw-bold">W</div>
                     </div>
 
                     <!-- Grid -->
@@ -39,7 +42,7 @@
                                 ($x===1 && $y===7);
                                 $isRover=($x===2 && $y===2);
                                 @endphp
-                                <div class="col p-0 border cell ratio ratio-1x1 
+                                <div class="col p-0 border border-dark cell ratio ratio-1x1 
                             {{ $isObstacle ? 'bg-dark' : '' }} 
                             {{ $isRover ? 'bg-primary' : '' }}"
                                 data-x="{{ $x }}" data-y="{{ $y }}">
@@ -52,12 +55,12 @@
 
                 <!-- East -->
                 <div class="col-auto d-flex align-items-center justify-content-center">
-                    <div class="text-uppercase fw-bold">E</div>
+                    <div id="label-east" class="text-uppercase fw-bold">E</div>
                 </div>
             </div>
 
             <!-- South -->
-            <div class="text-uppercase fw-bold mt-2">S</div>
+            <div id="label-south" class="text-uppercase fw-bold mt-2">S</div>
         </div>
 
 
