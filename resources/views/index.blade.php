@@ -13,15 +13,23 @@
 <body class="container bg-warning">
     <h1 class="p-5 text-center fw-bold">Mars Rover Mission</h1>
     <div class="container mt-5">
+
         <div class="row d-flex justify-content-center">
+
             <!-- Column 1: The Grid -->
-            <div class="col-md-4 pb-5 position-relative">
-                {{-- North --}}
-                <div class="text-uppercase text-center fw-bold mb-2">N</div>
-                <div>
-                    {{-- West --}}
-                    <div class="text-uppercase fw-bold me-2">W</div>
-                    <div id="grid">
+            <div class="col-md-4 pb-5 text-center">
+                <!-- North -->
+                <div class="text-uppercase fw-bold mb-2">N</div>
+
+                <!-- Row containing West + Grid + East -->
+                <div class="row">
+                    <!-- West -->
+                    <div class="col-auto d-flex align-items-center justify-content-center">
+                        <div class="text-uppercase fw-bold">W</div>
+                    </div>
+
+                    <!-- Grid -->
+                    <div class="col p-0" id="grid">
                         @for ($y = 9; $y >= 0; $y--)
                         <div class="row g-0">
                             @for ($x = 0; $x < 10; $x++)
@@ -31,21 +39,27 @@
                                 ($x===1 && $y===7);
                                 $isRover=($x===2 && $y===2);
                                 @endphp
-                                <div class="col p-0 border cell ratio ratio-1x1 {{ $isObstacle ? 'bg-dark' : '' }} {{ $isRover ? 'bg-primary' : '' }}"
+                                <div class="col p-0 border cell ratio ratio-1x1 
+                            {{ $isObstacle ? 'bg-dark' : '' }} 
+                            {{ $isRover ? 'bg-primary' : '' }}"
                                 data-x="{{ $x }}" data-y="{{ $y }}">
-                                {{-- Optional: show coordinates --}}
                                 {{-- {{ $x }},{{ $y }} --}}
                         </div>
                         @endfor
                     </div>
                     @endfor
                 </div>
-                {{-- East --}}
-                <div class="text-uppercase fw-bold ms-2">E</div>
+
+                <!-- East -->
+                <div class="col-auto d-flex align-items-center justify-content-center">
+                    <div class="text-uppercase fw-bold">E</div>
+                </div>
             </div>
-            {{-- South --}}
-            <div class="text-uppercase text-center fw-bold mt-2">S</div>
+
+            <!-- South -->
+            <div class="text-uppercase fw-bold mt-2">S</div>
         </div>
+
 
         <div class="col-md-4">
             <h4 class="mb-3 text-center fs-2">Controls</h4>
