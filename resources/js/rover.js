@@ -43,4 +43,8 @@ document.addEventListener("DOMContentLoaded", () => {
     document
         .getElementById("rightBtn")
         .addEventListener("click", () => move(1, 0));
+    document.getElementById("resetBtn").addEventListener("click", () => {
+        // Reload the page to reset everything
+        location.reload();
+    });
 });

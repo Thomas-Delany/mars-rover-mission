@@ -69,6 +69,7 @@
             <button id="forwardBtn" class="btn btn-outline-success w-100 mb-4 border-2 fw-bold fs-5">Move Forward</button>
             <button id="leftBtn" class="btn btn-outline-danger w-100 mb-4 border-2 fw-bold fs-5">Turn Left</button>
             <button id="rightBtn" class="btn btn-outline-primary w-100 mb-4 border-2 fw-bold fs-5">Turn Right</button>
+            <button id="resetBtn" class="btn btn-outline-secondary w-100 mb-4 border-2 fw-bold fs-5">Reset</button>
             <hr class="border-2 opacity-50">
             <div class="d-flex align-items-center pt-3 mb-3">
                 <div class="bg-dark text-white p-3 rounded me-3"></div>
